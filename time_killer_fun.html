@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Killer Fun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+        .main-content {
+            margin-top: 20px;
+        }
+        .game-button {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .game-button:hover {
+            background-color: #e24c4c;
+        }
+        .quiz-container {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-container h2 {
+            font-size: 22px;
+        }
+        .quiz-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .quiz-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Welcome to Time Killer Fun!
+</header>
+
+<div class="main-content">
+    <h1>Ready to Kill Some Time?</h1>
+
+    <div class="game-section">
+        <h2>Try the Quiz Game!</h2>
+        <button class="game-button" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div class="game-section">
+        <h2>Play a Simple Puzzle Game!</h2>
+        <button class="game-button" onclick="startPuzzle()">Start Puzzle</button>
+    </div>
+
+    <div class="quiz-container" id="quiz-container" style="display: none;">
+        <h2>Quick Quiz</h2>
+        <p id="question"></p>
+        <button class="quiz-button" onclick="nextQuestion()">Next Question</button>
+    </div>
+</div>
+
+<script>
+    let quizQuestions = [
+        { question: "What is 2 + 2?", answer: "4" },
+        { question: "What color is the sky?", answer: "blue" },
+        { question: "Which planet is closest to the Sun?", answer: "Mercury" }
+    ];
+    let currentQuestion = 0;
+
+    function startQuiz() {
+        document.querySelector('.main-content').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        showQuestion();
+    }
+
+    function showQuestion() {
+        const questionElement = document.getElementById('question');
+        questionElement.textContent = quizQuestions[currentQuestion].question;
+    }
+
+    function nextQuestion() {
+        if (currentQuestion < quizQuestions.length - 1) {
+            currentQuestion++;
+            showQuestion();
+        } else {
+            alert("You completed the quiz!");
+            location.reload();
+        }
+    }
+
+    function startPuzzle() {
+        alert("Puzzle game coming soon! Stay tuned!");
+    }
+</script>
+
+</body>
+</html>
