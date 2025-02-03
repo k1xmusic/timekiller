@@ -1,58 +1,76 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Killer Fun</title>
+    <title>Убийца Времени</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fb;
             color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
         header {
-            background-color: #222;
+            background-color: #3b82f6;
             color: white;
             padding: 20px 0;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
         }
         .main-content {
             margin-top: 20px;
         }
+        .game-section {
+            margin: 30px 0;
+        }
         .game-button {
-            background-color: #ff5c5c;
+            background-color: #4caf50;
             color: white;
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
         .game-button:hover {
-            background-color: #e24c4c;
+            background-color: #45a049;
+        }
+        .game-button:active {
+            background-color: #388e3c;
+        }
+        .game-section img {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
         .quiz-container {
             margin-top: 30px;
-            background-color: #fff;
+            background-color: white;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            margin: 0 auto;
         }
         .quiz-container h2 {
-            font-size: 22px;
+            font-size: 24px;
+            margin-bottom: 15px;
         }
         .quiz-button {
-            background-color: #4CAF50;
+            background-color: #4caf50;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 25px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .quiz-button:hover {
             background-color: #45a049;
@@ -62,34 +80,36 @@
 <body>
 
 <header>
-    Welcome to Time Killer Fun!
+    Убийца Времени: Развлекайся и убивай время!
 </header>
 
 <div class="main-content">
-    <h1>Ready to Kill Some Time?</h1>
+    <h1>Готов провести время с пользой?</h1>
 
     <div class="game-section">
-        <h2>Try the Quiz Game!</h2>
-        <button class="game-button" onclick="startQuiz()">Start Quiz</button>
+        <h2>Попробуй викторину!</h2>
+        <button class="game-button" onclick="startQuiz()">Начать викторину</button>
+        <img src="https://via.placeholder.com/400x250.png?text=Викторина" alt="Викторина">
     </div>
 
     <div class="game-section">
-        <h2>Play a Simple Puzzle Game!</h2>
-        <button class="game-button" onclick="startPuzzle()">Start Puzzle</button>
+        <h2>Поиграй в головоломку!</h2>
+        <button class="game-button" onclick="startPuzzle()">Начать головоломку</button>
+        <img src="https://via.placeholder.com/400x250.png?text=Головоломка" alt="Головоломка">
     </div>
 
     <div class="quiz-container" id="quiz-container" style="display: none;">
-        <h2>Quick Quiz</h2>
+        <h2>Быстрая викторина</h2>
         <p id="question"></p>
-        <button class="quiz-button" onclick="nextQuestion()">Next Question</button>
+        <button class="quiz-button" onclick="nextQuestion()">Следующий вопрос</button>
     </div>
 </div>
 
 <script>
     let quizQuestions = [
-        { question: "What is 2 + 2?", answer: "4" },
-        { question: "What color is the sky?", answer: "blue" },
-        { question: "Which planet is closest to the Sun?", answer: "Mercury" }
+        { question: "Сколько будет 2 + 2?", answer: "4" },
+        { question: "Какого цвета небо?", answer: "синий" },
+        { question: "Какая планета ближайшая к Солнцу?", answer: "Меркурий" }
     ];
     let currentQuestion = 0;
 
@@ -109,13 +129,13 @@
             currentQuestion++;
             showQuestion();
         } else {
-            alert("You completed the quiz!");
+            alert("Вы завершили викторину!");
             location.reload();
         }
     }
 
     function startPuzzle() {
-        alert("Puzzle game coming soon! Stay tuned!");
+        alert("Головоломка скоро будет! Ожидайте.");
     }
 </script>
 
