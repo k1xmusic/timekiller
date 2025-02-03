@@ -116,6 +116,7 @@
     let currentQuestion = 0;
 
     function startQuiz() {
+        console.log("Начинаем викторину!");  // Отладка
         document.querySelector('.main-content').style.display = 'none';
         document.getElementById('quiz-container').style.display = 'block';
         showQuestion();
@@ -123,6 +124,7 @@
 
     function showQuestion() {
         const questionElement = document.getElementById('question');
+        console.log("Показываем вопрос:", quizQuestions[currentQuestion].question);  // Отладка
         questionElement.textContent = quizQuestions[currentQuestion].question;
     }
 
